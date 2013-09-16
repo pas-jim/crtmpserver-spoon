@@ -7,7 +7,6 @@ FIND_PATH(OPENSSL_INCLUDE_PATH
                 /usr/local/include
                 /sw/include
                 /usr/local/ssl/include
-                /usr/lib/x86_64-linux-gnu
                 NO_DEFAULT_PATH)
 
 IF($ENV{COMPILE_STATIC} MATCHES "1")
@@ -27,8 +26,7 @@ FIND_LIBRARY(OPENSSL_LIBRARY_PATH
                 /sw/lib
                 /usr/local/ssl/lib
                 /lib
-                /usr/lib/x86_64-linux-gnu
-                NO_DEFAULT_PATH)
+                )
 
 FIND_LIBRARY(CRYPTO_LIBRARY_PATH
         NAMES
@@ -42,8 +40,7 @@ FIND_LIBRARY(CRYPTO_LIBRARY_PATH
                 /sw/lib
                 /usr/local/ssl/lib
                 /lib
-                /usr/lib/x86_64-linux-gnu
-                NO_DEFAULT_PATH)
+                )
 
 IF($ENV{COMPILE_STATIC} MATCHES "1")
         FIND_LIBRARY(Z_LIBRARY_PATH
@@ -58,8 +55,7 @@ IF($ENV{COMPILE_STATIC} MATCHES "1")
                         /sw/lib
                         /usr/local/ssl/lib
                         /lib
-                        /usr/lib/x86_64-linux-gnu
-                NO_DEFAULT_PATH)
+                        NO_DEFAULT_PATH)
         SET(CMAKE_FIND_LIBRARY_SUFFIXES ${CMAKE_FIND_LIBRARY_SUFFIXES_OLD})
 ELSEIF($ENV{COMPILE_STATIC} MATCHES "1")
         SET(Z_LIBRARY_PATH "")
@@ -105,4 +101,5 @@ IF($ENV{COMPILE_STATIC} MATCHES "1")
 ENDIF($ENV{COMPILE_STATIC} MATCHES "1")
 
 MARK_AS_ADVANCED(OPENSSL_FOUND)
+
 
