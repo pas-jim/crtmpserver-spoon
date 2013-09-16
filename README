@@ -96,7 +96,7 @@ Credits:
 
 --- Added by Jim ---
 
-My specific instructions...
+My specific instructions... to compile on the glasses...
 
 cd builders/cmake
 cmake .
@@ -104,5 +104,5 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCRTMPSERVER_INSTALL_PREFIX=/opt/crtmpd
 make
 make install
 cp -r xoeye/etc /opt/crtmpd/etc
-/opt/crtmpd/sbin/crtmpserver --use-implicit-console-appender /opt/crtmpd/etc/crtmpserver.old.lua &
+/opt/crtmpd/sbin/crtmpserver --use-implicit-console-appender /opt/crtmpd/etc/crtmpserver.jim.lua &
 
