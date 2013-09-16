@@ -103,6 +103,7 @@ cmake .
 cmake -DCMAKE_BUILD_TYPE=Release -DCRTMPSERVER_INSTALL_PREFIX=/opt/crtmpd
 make
 make install
-cp -r xoeye/etc /opt/crtmpd/etc
+cp -r xoeye/etc /opt/crtmpd/
 /opt/crtmpd/sbin/crtmpserver --use-implicit-console-appender /opt/crtmpd/etc/crtmpserver.jim.lua &
 
+outgoing stream will be created and named 'ts0'
